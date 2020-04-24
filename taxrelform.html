@@ -1,0 +1,69 @@
+<html>
+<body>
+    <form id="myForm">
+        Name<input type="text" id="name"><br><br>
+        DOB<input type="date" id="da"><br><br>
+        GENDER <br><input type="radio" id="g" name="gender" value="male"> male<br>
+        <input type="radio" id="g" name="gender" value="female"> female<br>
+        INCOME<input type="text" id="abc">
+        <input type="button" value="calculate" onclick="calculate()">
+        <input type="button" value="reset" onclick="reset()">
+    </form>
+    
+    <script>
+    function calculate()
+        {
+            var n=document.getElementById("name").value;
+            var d=document.getElementById("da").value;
+            var gen=document.getElementById("g").value;
+            var inc=document.getElementById("abc").value;
+            if(n=="")
+                {
+                    alert("please enter your name");
+                    
+                }
+            else if(d=="")
+                {
+                    alert("plz entr your dob");
+                }
+           else if(gen=="")
+                {
+                    alert("plz entr your gender");
+                }
+            else if( inc=="")
+                {
+                    alert("Enter your income");
+                }
+           else if(inc<0)
+                {
+                    alert("plz enter vlid incm");
+                }
+           else if(inc<=500000 && gen==true)
+                {
+                    alert("no tax");
+                }
+            else if(inc<=600000 && gen==false)
+                {
+                    alert("no tax");
+                }
+          else  if(inc>500000 && inc<1000000 && gen==true)
+                {
+                    alert("tax is 20 %");
+                }
+        else if(inc>600000 && inc<1000000 && gen==false)
+                {
+                    alert("tax is 10 %");
+                    
+                }
+            else
+                {
+                    alert("tax is 30 %");
+                }
+            
+    }
+        function reset(){
+            document.getElementById("myForm").reset();
+        }
+    </script>
+    </body>
+</html>
